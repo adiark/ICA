@@ -112,10 +112,10 @@ Noise_Max = st.sidebar.slider('Maximum amount of noise:', 0, 40, value=1)
 # Seed_Number = st.sidebar.slider('Seed number:', 1, 200, value=10)
 np.random.seed(10)
 X = np.random.uniform(0, 20,Sample_Number)
-# Noise = np.random.uniform(-1, 1,Sample_Number)
+Noise = np.random.uniform(-Noise_Max, Noise_Max,Sample_Number)
 Initial_Slope = 4#st.sidebar.number_input('Slope of fake data:', min_value=-10.0, max_value=10.0,step=0.01, value=2.0,format='%f')
 Initial_Intercept = 8#st.sidebar.number_input('Intercept of fake data:', min_value=-10.0, max_value=10.0,step=0.01, value=5.0,format='%f')
-y=X*Initial_Slope+Noise_Max+Initial_Intercept
+y=X*Initial_Slope+Noise+Initial_Intercept
 ####################################################################################################################################################################
 Data_Visualization = cols1[0].checkbox('Visualize Fake Data?')
 if Data_Visualization:
